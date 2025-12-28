@@ -40,42 +40,98 @@ Axios for API calls
 Vite for build tooling
 
 Project Structure:-
+
+
+
+
 Technical Article publishing system/
+
+
+
+
 ├── backend/
+
 │   ├── models/
+
 │   │   ├── User.js
+
 │   │   └── Article.js
+
 │   ├── routes/
+
 │   │   ├── auth.js
+
+
 │   │   └── articles.js
+
 │   ├── middleware/
+
 │   │   └── auth.js
+
 │   ├── server.js
+
 │   ├── package.json
+
 │   └── .env.example
+
+
+
+
+
+
+
+
+
+
+
+
 ├── frontend/
+
 │   ├── src/
+
 │   │   ├── components/
+
 │   │   │   └── Navbar.jsx
+
 │   │   ├── pages/
+
 │   │   │   ├── Home.jsx
+
 │   │   │   ├── Login.jsx
+
 │   │   │   ├── Register.jsx
+
 │   │   │   ├── ArticleList.jsx
+
 │   │   │   ├── ArticleDetail.jsx
+
 │   │   │   ├── CreateArticle.jsx
+
 │   │   │   ├── EditArticle.jsx
+
 │   │   │   ├── MyArticles.jsx
+
 │   │   │   └── AdminDashboard.jsx
+
 │   │   ├── context/
+
 │   │   │   └── AuthContext.jsx
+
 │   │   ├── App.jsx
+
 │   │   ├── main.jsx
+
 │   │   └── index.css
+
 │   ├── index.html
+
 │   ├── vite.config.js
+
 │   └── package.json
+
 └── README.md
+
+
 
 Setup
 Navigate to the frontend directory (Terminal2): 
@@ -84,6 +140,8 @@ npm install
 Start the development server:
 npm run dev
 http://192.168.29.158:3000/
+
+
 
 API Routes
 Authentication Routes
@@ -98,7 +156,12 @@ PUT /api/articles/:id - Update article (Writer own article/Admin)
 DELETE /api/articles/:id - Delete article (Admin only)
 PATCH /api/articles/:id/publish - Publish article (Admin only)
 GET /api/articles/my/articles - Get user's articles (Writer/Admin only)
+
+
+
 Data Models
+
+
 User Model
 {
   username: String,
@@ -107,6 +170,9 @@ User Model
   role: String (enum: 'admin', 'writer', 'reader'),
   timestamps
 }
+
+
+
 Article Model
 {
   title: String,
@@ -117,34 +183,72 @@ Article Model
   publishedAt: Date,
   timestamps
 }
+
+
+
+
+
 New Features Added
+
+
 Enhanced Admin Capabilities
+
 Admins can now edit any article regardless of author or status
+
 Delete functionality available for admins on all articles
+
 Edit and Delete buttons available in article lists for admins
+
 Complete article management from both list view and detail view
-Search and Filter System
+
+Search and Filter System:-
+
 Real-time Search: Search across title, content, tags, and author names
+
 Date Filtering: Filter articles by Today, Last Week, Last Month, Last Year
+
 Combined Filtering: Use search and date filters together
+
 Responsive Design: Works on all device sizes
-Article Status System
+
+Article Status System:-
+
 Draft: Visible to author and admins only
+
 Published: Visible to everyone
+
 Private: Visible to author and admins only
+
 Writers can set any status when creating/editing articles
+
 Admins can change any article status
+
 Role-Based Authorization Matrix
+
 Action	Reader	Writer	Admin
+
 View published articles	✅	✅	✅
+
 Create articles	❌	✅	✅
+
 Edit own drafts/private	❌	✅	✅
+
 Edit any article	❌	❌	✅
+
 Publish articles	❌	❌	✅
+
 Delete own articles	❌	✅	✅
+
 Delete any article	❌	❌	✅
+
+
 Usage
 Register/Login: Create an account with your desired role (admin, writer, or reader)
+
+
+
+
+
 
 Writers:
 
@@ -183,4 +287,5 @@ Input validation and sanitization
 Secure article visibility based on user roles
 License
 ISC
+
 
